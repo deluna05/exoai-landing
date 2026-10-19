@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ExoAI | Enterprise Zero-Trust Security for LLMs</title>
+    <title>ExoAI | Enterprise Zero-Trust AI Security Gateway</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -19,12 +19,13 @@
     <!-- Navbar -->
     <nav class="fixed w-full border-b border-white/10 bg-black/50 backdrop-blur-md z-50 transition-all">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-3xl font-bold tracking-tighter">Exo<span class="text-green-400">AI</span></div>
-            <div class="hidden md:flex gap-6 text-sm font-medium text-gray-400">
-                <a href="#features" class="hover:text-white transition">Features</a>
-                <a href="#architecture" class="hover:text-white transition">Architecture</a>
+            <div class="text-2xl font-bold tracking-tighter">Exo<span class="text-green-400">AI</span> <span class="text-xs font-mono text-gray-400 border border-white/10 px-2 py-0.5 rounded ml-1">v3.1 MVP</span></div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#features" class="hover:text-white transition">Architecture</a>
+                <a href="#benchmarks" class="hover:text-white transition">Benchmarks</a>
+                <a href="#interception" class="hover:text-white transition">Live Demo</a>
                 <a href="#market" class="hover:text-white transition">Market</a>
-                <a href="#business" class="hover:text-white transition">Business</a>
+                <a href="#roadmap" class="hover:text-white transition">Roadmap</a>
                 <a href="#founder" class="hover:text-white transition">Founder</a>
             </div>
             <a href="mailto:aiganymtulebayeva@gmail.com" class="text-sm font-semibold bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200 transition">Contact</a>
@@ -32,223 +33,190 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="max-w-6xl mx-auto px-6 pt-32 pb-16 text-center">
+    <header class="max-w-5xl mx-auto px-6 pt-36 pb-16 text-center">
         <div class="inline-block border border-green-500/30 bg-green-500/10 text-green-400 text-xs px-3 py-1 rounded-full mb-6 font-semibold uppercase tracking-wider">
-            Zero-Trust AI Security Layer
+            Zero-Trust L7 AI Security Gateway
         </div>
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-            Stop AI Data Leaks. <br>
+            Stop AI Data Leaks.<br>
             <span class="gradient-text">Before They Leave The Network.</span>
         </h1>
-        <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10">
-            The invisible reverse proxy for corporate LLM traffic. We sanitize prompts, block jailbreaks, and secure enterprise AI in real-time with sub-6ms latency.
+        <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
+            An OpenAI-compatible L7 reverse proxy for enterprise LLM traffic. We validate and tokenize structured regional PII (Kazakhstan IIN/BIN, IBAN, Payment Cards), block direct prompt injections, and enforce strict Zero Data Retention with sub-millisecond overhead.
         </p>
         <div class="flex justify-center gap-4">
-            <a href="https://github.com/deluna05/exoai-security-proxy" target="_blank" class="bg-white text-black px-8 py-3 rounded-md font-semibold hover:bg-gray-200 transition">View GitHub</a>
-            <a href="#architecture" class="glass-card text-white px-8 py-3 rounded-md font-semibold hover:bg-white/10 transition">See How It Works</a>
+            <a href="https://github.com/deluna05" target="_blank" class="bg-white text-black font-semibold px-6 py-3 rounded-md hover:bg-gray-200 transition">View GitHub</a>
+            <a href="#benchmarks" class="glass-card text-white font-semibold px-6 py-3 rounded-md hover:bg-white/10 transition">View v3.1 Benchmarks</a>
         </div>
     </header>
 
-    <!-- Stats Section -->
-    <section class="border-t border-white/5 bg-white/[0.02]">
-        <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
-            <div class="pt-2 md:pt-0">
-                <div class="text-4xl font-bold text-red-400 mb-2">73%</div>
-                <div class="text-sm text-gray-400">of employees paste sensitive <br> data into public LLMs.</div>
+    <!-- Verified Metrics Bar -->
+    <section id="benchmarks" class="border-y border-white/10 bg-white/[0.01] py-10">
+        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="text-3xl font-extrabold text-red-400 mb-1">73.8%</div>
+                <div class="text-xs text-gray-400">of workplace ChatGPT accounts are unmanaged personal accounts <span class="text-gray-500 block mt-0.5">(Cyberhaven Labs Report, 2024)</span></div>
             </div>
-            <div class="pt-2 md:pt-0">
-                <div class="text-4xl font-bold text-white mb-2">&lt; 6 ms</div>
-                <div class="text-sm text-gray-400">Average latency overhead. <br> Zero impact on UX.</div>
+            <div>
+                <div class="text-3xl font-extrabold text-white mb-1">0.017 ms</div>
+                <div class="text-xs text-gray-400">P50 in-memory sanitization latency <span class="text-gray-500 block mt-0.5">(~0.48 ms full FastAPI HTTP handler)</span></div>
             </div>
-            <div class="pt-2 md:pt-0">
-                <div class="text-4xl font-bold text-green-400 mb-2">Stateless</div>
-                <div class="text-sm text-gray-400">Ephemeral RAM caching. <br> Zero data retention.</div>
+            <div>
+                <div class="text-3xl font-extrabold text-green-400 mb-1">99.29%</div>
+                <div class="text-xs text-gray-400">false-positive reduction on 12-digit noise <span class="text-gray-500 block mt-0.5">(707/100,000 via two-pass Modulus-11)</span></div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-blue-400 mb-1">Strict ZDR</div>
+                <div class="text-xs text-gray-400">Request-scoped RAM mapping &amp; keyed <span class="code-font text-[11px]">HMAC-SHA256</span> audit <span class="text-gray-500 block mt-0.5">(Zero raw prompts on disk)</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Key Capabilities -->
-    <section id="features" class="max-w-6xl mx-auto px-6 pt-8 pb-16">
-        <h2 class="text-3xl font-bold mb-10 text-center">Engineered for Enterprise Security</h2>
+    <!-- Architecture & Core Features -->
+    <section id="features" class="max-w-6xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold text-center mb-4">Engineered for Regulated Enterprise Environments</h2>
+        <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12 text-sm">
+            Drop-in OpenAI-compatible endpoint (<span class="code-font text-green-400">POST /v1/chat/completions</span>) requiring zero SDK changes.
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="glass-card p-8 rounded-2xl transition duration-300">
-                <div class="text-green-400 text-3xl mb-6">🛡</div>
-                <h3 class="text-xl font-bold mb-3">Smart Regional DLP</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Automatically detects and redacts IIN, BIN, local IBANs, and PII, replacing them with secure <code class="code-font text-xs bg-black/50 px-1 py-0.5 rounded text-green-300">[CONFIDENTIAL_DATA_MASKED]</code> tokens. Natively trained for CIS contexts.</p>
+            <div class="glass-card p-6 rounded-xl">
+                <div class="text-green-400 font-mono text-xs uppercase mb-2">01 / Deterministic Regional DLP</div>
+                <h3 class="text-xl font-bold mb-3">Mathematical Checksum Validation</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Eliminates naive regex false positives by validating Kazakhstan Individual IINs and Corporate BINs via official two-pass <strong>Modulus-11</strong> checksums and embedded calendar bounds, payment cards via <strong>Luhn</strong>, and KZ IBANs. Replaces entities with indexed tokens (<span class="code-font text-green-400 text-xs">[CONFIDENTIAL_IIN_1]</span>) for exact bidirectional re-mapping.
+                </p>
             </div>
-            <div class="glass-card p-8 rounded-2xl transition duration-300">
-                <div class="text-red-400 text-3xl mb-6">🛑</div>
-                <h3 class="text-xl font-bold mb-3">Anti-Prompt Injection</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Scans incoming traffic for jailbreak patterns and adversarial instructions. Malicious payloads are dropped instantly before reaching the backend LLM.</p>
+            <div class="glass-card p-6 rounded-xl">
+                <div class="text-red-400 font-mono text-xs uppercase mb-2">02 / Edge Prompt Firewall &amp; SSE</div>
+                <h3 class="text-xl font-bold mb-3">Contextual Injection Defense</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Scans incoming payloads against multi-word contextual injection signatures (EN/RU/KZ), dropping malicious overrides at the edge (<span class="code-font text-xs">HTTP 403</span>) without blocking benign business verbs. Supports <span class="code-font text-xs">stream: true</span> via a 64-byte <span class="code-font text-xs">SlidingWindowStreamBuffer</span> that re-maps split tokens across SSE chunks.
+                </p>
             </div>
-            <div class="glass-card p-8 rounded-2xl transition duration-300">
-                <div class="text-blue-400 text-3xl mb-6">⚡</div>
-                <h3 class="text-xl font-bold mb-3">Ephemeral Mapping</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Original data is never stored on disk. Stateful re-mapping happens via ephemeral RAM cache that is purged completely after the response delivery.</p>
+            <div class="glass-card p-6 rounded-xl">
+                <div class="text-blue-400 font-mono text-xs uppercase mb-2">03 / Ephemeral RAM &amp; SIEM Audit</div>
+                <h3 class="text-xl font-bold mb-3">Request-Scoped Zero Data Retention</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Lookup tables exist strictly in volatile request-scoped RAM and are garbage-collected immediately upon response delivery. SQLite/SIEM audit logs enforce RBAC attribution, redact prompt text by default (<span class="code-font text-xs">[REDACTED_BY_ZDR_POLICY]</span>), and record tenant-keyed <span class="code-font text-xs">HMAC-SHA256</span> digests.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Real-time Architecture & Proof of Work -->
-    <section id="architecture" class="max-w-6xl mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold mb-10 text-center">Live Proxy Interception</h2>
-        
-        <!-- Postman Скриншоты -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-            <div class="glass-card rounded-xl overflow-hidden p-3 border border-white/10 flex flex-col">
-                <div class="text-xs text-gray-400 mb-3 px-2 pt-1 font-mono flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-green-500"></span> DLP Tokenization (Status 200)
-                </div>
-                <img src="postman1.jpg" alt="Postman Tokenization Test" class="w-full h-auto rounded-lg border border-white/5 object-cover">
+    <!-- Live Proxy Interception -->
+    <section id="interception" class="max-w-6xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-center mb-10">Live Gateway Interception</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="glass-card p-4 rounded-xl">
+                <div class="text-xs text-green-400 font-mono mb-2">● DLP Indexed Tokenization &amp; Re-Mapping (HTTP 200)</div>
+                <img src="postman1.jpg" alt="DLP Tokenization" class="rounded-lg w-full border border-white/10">
             </div>
-            <div class="glass-card rounded-xl overflow-hidden p-3 border border-white/10 flex flex-col">
-                <div class="text-xs text-gray-400 mb-3 px-2 pt-1 font-mono flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-red-500"></span> Prompt Injection Blocked (Status 403)
-                </div>
-                <img src="postman2.png" alt="Postman Prompt Injection Test" class="w-full h-auto rounded-lg border border-white/5 object-cover">
+            <div class="glass-card p-4 rounded-xl">
+                <div class="text-xs text-red-400 font-mono mb-2">● Prompt Injection Blocked at Edge (HTTP 403)</div>
+                <img src="postman2.png" alt="Prompt Injection Blocked" class="rounded-lg w-full border border-white/10">
             </div>
         </div>
-
-        <!-- Telegram Bot Скриншот -->
-        <video src="DEMOO.mp4" autoplay loop muted playsinline class="w-full h-auto rounded-lg border border-white/5 object-cover shadow-2xl"></video>
+        <div class="glass-card p-4 rounded-xl">
+            <div class="text-xs text-blue-400 font-mono mb-2">● Client Interface Consumer Demonstration</div>
+            <img src="bot.png" alt="Client Demo" class="rounded-lg w-full border border-white/10">
+        </div>
     </section>
 
-    <!-- Market Sizing -->
-    <section id="market" class="max-w-6xl mx-auto px-6 py-12">
-        <h2 class="text-3xl font-bold mb-10 text-center">The Market: Securing Enterprise AI</h2>
+    <!-- Current Scope vs Roadmap (Transparency Section) -->
+    <section id="roadmap" class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-10">Architecture Scope &amp; Engineering Roadmap</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass-card p-6 rounded-xl border-l-4 border-l-green-400">
+                <div class="text-xs font-mono uppercase text-green-400 mb-2">Live in v3.1 MVP (Pilot-Ready)</div>
+                <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+                    <li>OpenAI-compatible FastAPI/Uvicorn L7 Reverse Proxy</li>
+                    <li>Two-pass KZ IIN &amp; Corporate BIN Modulus-11 validation + Luhn card check</li>
+                    <li>Request-scoped indexed tokenization &amp; case-insensitive re-mapping</li>
+                    <li>SSE streaming support (<span class="code-font text-xs">SlidingWindowStreamBuffer</span>)</li>
+                    <li>Multi-LLM failover router with <span class="code-font text-xs">data_collection: deny</span> enforcement</li>
+                    <li>Authenticated SQLite/SIEM audit dashboard with keyed <span class="code-font text-xs">HMAC-SHA256</span></li>
+                </ul>
+            </div>
+            <div class="glass-card p-6 rounded-xl border-l-4 border-l-blue-400">
+                <div class="text-xs font-mono uppercase text-blue-400 mb-2">Next Milestones (Q4 2026 – Q1 2027 Roadmap)</div>
+                <ul class="text-sm text-gray-300 space-y-2 list-disc list-inside">
+                    <li><strong>Tier-2 Unstructured DLP:</strong> Local quantized ONNX classifier (GLiNER / DeBERTa) + entropy scanning for contracts, M&amp;A financials, and source code (&lt;15–25 ms CPU target)</li>
+                    <li><strong>Context-Window Currency Filter:</strong> Eliminating residual 1.18% collisions on round 12-digit KZT amounts</li>
+                    <li><strong>Adversarial Benchmarks:</strong> Evaluation on Lakera PINT &amp; HackAPrompt with local <span class="code-font text-xs">Prompt-Guard-86M</span></li>
+                    <li><strong>Air-Gapped Hardening:</strong> Turnkey local vLLM/Ollama compose stack, mTLS, SBOM, and OCR pre-normalization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section (Aligned 1:1 with Due Diligence Q18) -->
+    <section id="market" class="max-w-6xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-4">The Market: Securing Enterprise AI</h2>
+        <p class="text-gray-400 text-center max-w-2xl mx-auto mb-10 text-sm">
+            Bottom-up market sizing based on Gartner AI TRiSM projections and regulated enterprise counts in Kazakhstan &amp; Central Asia.
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-8 rounded-2xl">
-                <div class="text-gray-500 text-sm font-bold uppercase tracking-wider mb-2">TAM</div>
-                <div class="text-4xl font-extrabold text-white mb-2">$7.5B</div>
-                <p class="text-gray-400 text-sm">Global Enterprise AI Security Market (CAGR 28%)</p>
+            <div class="glass-card p-6 rounded-xl">
+                <div class="text-xs text-gray-400 font-mono uppercase mb-1">TAM (Global by 2028)</div>
+                <div class="text-3xl font-extrabold text-white mb-2">$1.5B – $2.5B</div>
+                <div class="text-xs text-gray-400">Global AI Trust, Risk, and Security Management (AI TRiSM) &amp; Enterprise Governance Market (USD/yr).</div>
             </div>
-            <div class="border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-8 rounded-2xl">
-                <div class="text-gray-500 text-sm font-bold uppercase tracking-wider mb-2">SAM</div>
-                <div class="text-4xl font-extrabold text-white mb-2">$850M</div>
-                <p class="text-gray-400 text-sm">Central Eurasia & MENA Corporate Cybersecurity</p>
+            <div class="glass-card p-6 rounded-xl">
+                <div class="text-xs text-gray-400 font-mono uppercase mb-1">SAM (Kazakhstan &amp; Central Asia)</div>
+                <div class="text-3xl font-extrabold text-white mb-2">$18M – $27M</div>
+                <div class="text-xs text-gray-400">~450 regulated enterprises (tier-2 banks, fintechs, telecoms, oil &amp; gas, quasi-state) @ $40k–$60k avg. annual gateway spend.</div>
             </div>
-            <div class="border border-white/10 bg-gradient-to-b from-white/5 to-transparent p-8 rounded-2xl">
-                <div class="text-gray-500 text-sm font-bold uppercase tracking-wider mb-2">SOM</div>
-                <div class="text-4xl font-extrabold text-green-400 mb-2">$45M</div>
-                <p class="text-gray-400 text-sm">Top-Tier BFSI, Telecom, & GovTech (Years 1-3)</p>
+            <div class="glass-card p-6 rounded-xl">
+                <div class="text-xs text-gray-400 font-mono uppercase mb-1">SOM (24-Month Target ARR)</div>
+                <div class="text-3xl font-extrabold text-green-400 mb-2">$375K – $1.5M</div>
+                <div class="text-xs text-gray-400">Capturing 15 to 25 enterprise &amp; mid-market B2B annual licensing contracts at $25,000–$60,000 USD ACV.</div>
             </div>
         </div>
     </section>
 
     <!-- Business Model & GTM -->
-    <section id="business" class="max-w-6xl mx-auto px-6 pt-8 pb-16">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <!-- Business Model -->
-            <div>
-                <h2 class="text-2xl font-bold mb-8">Business Model: B2B SaaS</h2>
-                <div class="space-y-4">
-                    <div class="glass-card p-6 rounded-xl">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-lg font-bold">Cloud API</h3>
-                            <span class="text-blue-400 text-sm font-semibold border border-blue-500/30 bg-blue-500/10 px-2 py-1 rounded">Pay-as-you-go</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-4">For Mid-Market & Tech Teams. Charged per 1M tokens filtered.</p>
-                        <ul class="text-sm text-gray-300 space-y-2">
-                            <li>✓ Standard injection rules</li>
-                            <li>✓ Synthetic tokenization</li>
-                            <li>✓ API Key access</li>
-                        </ul>
-                    </div>
-                    <div class="glass-card p-6 rounded-xl border-green-500/30 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 bg-green-500 text-black text-[10px] font-bold px-3 py-1 uppercase rounded-bl-lg">Enterprise</div>
-                        <h3 class="text-lg font-bold mb-2">On-Premise Deployment</h3>
-                        <div class="text-2xl font-extrabold mb-2">From $50k <span class="text-sm font-normal text-gray-500">/ year</span></div>
-                        <p class="text-gray-400 text-sm mb-4">For Banks & GovTech. Deployed inside secure corporate perimeters.</p>
-                        <ul class="text-sm text-gray-300 space-y-2">
-                            <li>✓ Fixed Annual License + Maintenance</li>
-                            <li>✓ Custom Regional Datasets (KZ/RU)</li>
-                            <li>✓ Strict Data Residency Compliance</li>
-                            <li>✓ Air-gapped environment support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Go-To-Market -->
-            <div>
-                <h2 class="text-2xl font-bold mb-8">Go-To-Market Strategy</h2>
-                <div class="space-y-6 relative border-l border-white/10 ml-3 pl-8">
-                    <div class="relative">
-                        <div class="absolute -left-10 w-4 h-4 bg-green-500 rounded-full shadow-[0_0_10px_#4ade80]"></div>
-                        <h3 class="text-white font-bold mb-1">Phase 1: Direct Sales (Current)</h3>
-                        <p class="text-gray-400 text-sm">Securing 3-5 Pilot Design Partners (Top KZ Banks) for case studies and architecture validation.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-10 w-4 h-4 bg-gray-700 rounded-full"></div>
-                        <h3 class="text-white font-bold mb-1">Phase 2: Infrastructure (2027)</h3>
-                        <p class="text-gray-400 text-sm">Partnering with Cloud Providers and MSSPs as a white-label security add-on for their existing clients.</p>
-                    </div>
-                    <div class="relative">
-                        <div class="absolute -left-10 w-4 h-4 bg-gray-700 rounded-full"></div>
-                        <h3 class="text-white font-bold mb-1">Phase 3: Geographic Expansion</h3>
-                        <p class="text-gray-400 text-sm">Scaling the "Regional Moat" to MENA and SE Asia, where local data patterns are also ignored by US-centric tools.</p>
-                    </div>
-                </div>
+    <section id="business" class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="glass-card p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-4">Business Model: B2B Enterprise Licensing</h3>
+            <p class="text-sm text-gray-400 mb-4">
+                Deployed as a self-hosted, air-gapped-ready Docker gateway inside the client's DMZ or private Kubernetes cluster ($25k–$60k USD ACV).
+            </p>
+            <ul class="text-sm text-gray-300 space-y-2">
+                <li>✓ Zero external cloud dependencies for core DLP engine</li>
+                <li>✓ Compatible with internal vLLM / Ollama or private cloud endpoints</li>
+                <li>✓ RBAC multi-department attribution &amp; SIEM log export</li>
+            </ul>
+        </div>
+        <div class="glass-card p-6 rounded-xl">
+            <h3 class="text-xl font-bold mb-4">Go-To-Market Strategy</h3>
+            <div class="space-y-3 text-sm text-gray-300">
+                <div><strong class="text-green-400">Phase 1 (Current — Sandbox Pilots):</strong> Technical discovery and sandbox evaluation with Kazakhstan financial &amp; enterprise security teams.</div>
+                <div><strong class="text-blue-400">Phase 2 (2027 — Tier-2 ML &amp; Compliance):</strong> Integrating local ONNX semantic classification, OCR pipelines, and SIEM connectors.</div>
+                <div><strong class="text-purple-400">Phase 3 (Regional Scale):</strong> Expanding localized Central Asian &amp; MENA compliance packs across telecom and GovTech sectors.</div>
             </div>
         </div>
     </section>
 
     <!-- Founder Section -->
-    <section id="founder" class="border-t border-white/5 bg-white/[0.02]">
-        <div class="max-w-4xl mx-auto px-6 pt-12 pb-20 text-center">
-            <h2 class="text-3xl font-bold mb-8">The Founder</h2>
-            <div class="glass-card p-8 rounded-2xl max-w-3xl mx-auto text-left">
-                
-                <!-- Аватарка увеличена до w-36 h-36 -->
-                <div class="flex items-center gap-6 mb-6">
-                    <div class="w-60 h-60 bg-gray-800 rounded-full flex-shrink-0 border-2 border-green-500/40 overflow-hidden flex items-center justify-center shadow-lg">
-                        <img src="avatar.jpg" alt="Aiganym Tulebayeva" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-1">Aiganym Tulebayeva</h3>
-                        <p class="text-green-400 text-sm md:text-base font-semibold">Founder & CEO • Cybersecurity @ Astana IT University</p>
-                    </div>
-                </div>
-
-                <!-- Описание и цитата -->
-                <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-                    National Winner and Global Finalist of the NASA International Space Apps Challenge. Specialist in Central Eurasian data residency and regional compliance landscapes. Presented tech initiatives to the Governor of Tokyo.
+    <section id="founder" class="max-w-4xl mx-auto px-6 py-16 text-center">
+        <div class="glass-card p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8 text-left">
+            <img src="avatar.jpg" alt="Aiganym Tulebayeva" class="w-28 h-28 rounded-full object-cover border-2 border-green-400">
+            <div>
+                <div class="text-xs font-mono uppercase text-green-400 mb-1">Founder &amp; Lead Architect</div>
+                <h3 class="text-2xl font-bold mb-2">Aiganym Tulebayeva</h3>
+                <p class="text-sm text-gray-400 mb-4">
+                    Cybersecurity researcher at Astana IT University specializing in Zero-Trust LLM architectures, regional DLP validation, and enterprise AI governance. Showcased at AI-Sana, Astana Hub / Alem AI, and Channel Eurasia.
                 </p>
-                <p class="text-gray-300 text-sm italic border-l-2 border-white/20 pl-4 mb-6">
-                    "Cybersecurity shouldn't slow down innovation. With ExoAI, enterprises can harness the full power of Generative AI without compromising corporate secrecy."
-                </p>
-                
-                <!-- Призыв к действию (Investments + Email) -->
-                <div class="bg-white/5 border border-white/10 rounded-lg p-4">
-                    <p class="text-sm text-gray-300 font-semibold mb-1">🤝 Open for B2B pilots, strategic partnerships, and Seed funding to scale engineering.</p>
-                    <div class="mt-2 text-sm font-semibold">
-                        <a href="mailto:aiganymtulebayeva@gmail.com" class="text-green-400 hover:text-white transition">Email: aiganymtulebayeva@gmail.com</a>
-                    </div>
+                <div class="flex gap-4 text-sm">
+                    <a href="mailto:aiganymtulebayeva@gmail.com" class="text-green-400 hover:underline">aiganymtulebayeva@gmail.com</a>
+                    <a href="https://github.com/deluna05" target="_blank" class="text-gray-400 hover:text-white">GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-black pt-16 pb-8 text-center text-gray-500">
-        <div class="max-w-3xl mx-auto px-6">
-            <h4 class="text-white font-bold text-lg mb-2">ExoAI</h4>
-            <p class="text-sm mb-8">The Zero-Trust AI Security Layer</p>
-            
-            <div class="flex flex-col items-center justify-center gap-4 text-sm font-semibold mb-12">
-                <p class="text-gray-300 mb-2 uppercase tracking-widest text-xs">Get in Touch</p>
-                <div class="flex gap-6">
-                    <a href="https://t.me/hsvagm" target="_blank" class="hover:text-green-400 transition">Telegram</a>
-                    <a href="mailto:aiganymtulebayeva@gmail.com" class="hover:text-green-400 transition">Email</a>
-                    <a href="https://github.com/deluna05/exoai-security-proxy" target="_blank" class="hover:text-green-400 transition">GitHub</a>
-                </div>
-            </div>
-
-            <div class="mt-12 text-xs text-gray-600">
-                &copy; 2026 ExoAI Security. Built in Astana.
-            </div>
-        </div>
+    <footer class="border-t border-white/10 py-8 text-center text-xs text-gray-500">
+        © 2026 ExoAI Security Gateway. All rights reserved.
     </footer>
-
 </body>
 </html>
